@@ -46,7 +46,7 @@ document.addEventListener('keyup', (event) => {
                 total += this.prices[q]
             }
             for(let q = 0 ; q < this.prices.length; q++){  
-               this.proportions.push(10*(total/this.prices[q]))
+               this.proportions.push(((tutorial_canvas.height-5)/2)*(this.prices[q]/total))
             }
             this.proportions.sort((a, b) => (a > b) ? 1 : -1 )
             let startx = 52
