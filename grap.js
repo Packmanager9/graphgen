@@ -26,8 +26,8 @@ document.addEventListener('keyup', (event) => {
 
     class Graph{
         constructor(){
-            this.bar1 = new Rectangle(0, tutorial_canvas.height-50, 2, 1000, "black")
-            this.bar2 = new Rectangle(50, 0, 1000, 2, "black")
+            this.bar1 = new Rectangle(0, tutorial_canvas.height-50, 2, 10000, "black")
+            this.bar2 = new Rectangle(50, 0, 10000, 2, "black")
             this.units = []
             this.prices = []
         }
@@ -53,8 +53,8 @@ document.addEventListener('keyup', (event) => {
             let starty = (tutorial_canvas.height-50)
             let newunits = []
             for(let q = 0 ; q < this.proportions.length; q++){  
-              let box = new Rectangle(startx, starty-(2*this.proportions[q]),  (2*this.proportions[q]), 50,  getRandomLightColor())
-              startx += 60
+              let box = new Rectangle(startx, starty-(2*this.proportions[q]),  (2*this.proportions[q]), (.2*tutorial_canvas.width)/(this.prices.length/4),  getRandomLightColor())
+              startx += 2 + (.2*tutorial_canvas.width)/(this.prices.length/4)
               newunits.push(box)
              }
              this.units = [...newunits]
@@ -186,7 +186,7 @@ const rectx = tutorial_canvas.getBoundingClientRect();
 tutorial_canvas.addEventListener('mousedown', e => {
     x = e.clientX - rectx.left;
     y = e.clientY - rectx.top;
-    graph1.push(x)
+    graph1.push(y)
 });
 
 
